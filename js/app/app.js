@@ -8,6 +8,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //We decide to create a function to handle the 3rd party functions (eg. navigator.geolocation.getCurrentPosition)
 // which we earlier added to the native functions of the javascript
 //permission to access location
+var element = document.getElementById('mapview');
 function onDeviceReady() {
     navigator.geolocation.watchPosition(onSuccess, onError);
 }
@@ -18,8 +19,8 @@ function onSuccess(position) {
     var longitude = position.coords.longitude;
     var pos = new google.maps.LatLng(latitude, longitude);
     var mapview = document.getElementById('mapview');
-    mapview.style.height = 100%;
-    mapview.style.width = 60%;
+    mapview.style.height = '250px';
+    mapview.style.width = '500px';
 
     var myOptions = {
     center:pos,zoom:15,
